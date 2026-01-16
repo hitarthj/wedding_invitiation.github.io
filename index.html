@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-images">
+            <img id="mainImage" src="mountain-main.jpg" alt="Product Image">
+            <div class="thumbs">
+                <img onclick="changeImage('mountain1.jpg')" src="mountain1.jpg" alt="">
+                <img onclick="changeImage('mountain2.jpg')" src="mountain2.jpg" alt="">
+                <img onclick="changeImage('mountain3.jpg')" src="mountain3.jpg" alt="">
+            </div>
+        </div>
+        <div class="product-details">
+            <h1>Mountain</h1>
+            <p class="price">₹999</p>
+            <p class="description">Perfect for hill-station weddings — easy to edit, share, and personalize.</p>
+            <button id="buyBtn">Buy Now</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

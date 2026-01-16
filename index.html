@@ -3,27 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>Wedding Invite — Abhishek & Kanika</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="product-container">
-        <div class="product-images">
-            <img id="mainImage" src="mountain-main.jpg" alt="Product Image">
-            <div class="thumbs">
-                <img onclick="changeImage('mountain1.jpg')" src="mountain1.jpg" alt="">
-                <img onclick="changeImage('mountain2.jpg')" src="mountain2.jpg" alt="">
-                <img onclick="changeImage('mountain3.jpg')" src="mountain3.jpg" alt="">
-            </div>
-        </div>
-        <div class="product-details">
-            <h1>Mountain</h1>
-            <p class="price">₹999</p>
-            <p class="description">Perfect for hill-station weddings — easy to edit, share, and personalize.</p>
-            <button id="buyBtn">Buy Now</button>
-        </div>
-    </div>
 
-    <script src="scripts.js"></script>
+<header class="hero">
+    <div class="hero-content">
+        <h1>Abhishek <span>&</span> Kanika</h1>
+        <p>We joyfully invite you to our wedding celebrations</p>
+    </div>
+</header>
+
+<section id="events">
+    <h2>Event Schedule</h2>
+    <div class="card-grid">
+        <div class="event-card">
+            <h3>Mehendi</h3>
+            <p>Friday, March 7th, 2026</p>
+            <p>The Savoy, Mussoorie</p>
+            <button onclick="openRoute('https://maps.google.com')">See Route</button>
+        </div>
+        <div class="event-card">
+            <h3>Haldi</h3>
+            <p>Saturday, March 8th, 2026</p>
+            <p>The Savoy, Mussoorie</p>
+            <button onclick="openRoute('https://maps.google.com')">See Route</button>
+        </div>
+        <!-- Add more cards similarly -->
+    </div>
+</section>
+
+<section id="about">
+    <h2>Meet The Couple</h2>
+    <p>We are delighted that you’re part of our journey...</p>
+</section>
+
+<section id="details">
+    <h2>Things to Know</h2>
+    <div class="info-block">
+        <h4>Hashtag</h4>
+        <p>#BadriKiDulhania</p>
+    </div>
+    <div class="info-block">
+        <h4>Parking</h4>
+        <p>Valet parking available at venue</p>
+    </div>
+</section>
+
+<footer>
+    <button id="rsvpBtn">RSVP Now</button>
+</footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>

@@ -3,72 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hitarth & Chitra | Wedding Invitation</title>
+  <title>Hitarth & Chitra</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <header class="hero">
+  <!-- ONE SINGLE DIV -->
+  <div class="invite">
 
-    <!-- BACKGROUND -->
-    <img class="layer bg" src="images/background.avif" alt="Background" />
+    <!-- Level 4: Background (repeat) -->
+    <div class="bg"></div>
 
-    <!-- TOP ARCH -->
-    <img class="layer top-arch" src="images/top_arch.avif" alt="Top Arch" />
+    <!-- Level 3: Borders (above bg) -->
+    <img class="layer border left-border" src="images/left_border.png" alt="Left Border" />
+    <img class="layer border right-border" src="images/right border.png" alt="Right Border" />
+    <img class="layer border bottom-border" src="images/bottom_border.png" alt="Bottom Border" />
 
-    <!-- TOP GARLANDS + FLOWERS -->
-    <img class="layer left-top-garland" src="images/left_top_garland.avif" alt="Left Garland" />
-    <img class="layer right-top-garland" src="images/right_top_garland.avif" alt="Right Garland" />
-    <img class="layer left-top-flower" src="images/left_top_flower.avif" alt="Left Flower" />
-    <img class="layer right-top-flower" src="images/right_top_flower.avif" alt="Right Flower" />
+    <!-- Level 2: Shivji + flowers + garlands (below arch, overlap) -->
+    <img class="layer lvl2 shivji" src="images/top_shivji.avif" alt="Shivji" />
 
-    <!-- SIDE BORDERS -->
-    <img class="layer left-border" src="images/left_border.png" alt="Left Border" />
-    <img class="layer right-border" src="images/right_border.png" alt="Right Border" />
+    <img class="layer lvl2 left-flower" src="images/left_top_flower.avif" alt="Left Flower" />
+    <img class="layer lvl2 right-flower" src="images/right_top_flower.avif" alt="Right Flower" />
 
-    <!-- BOTTOM BORDER -->
-    <img class="layer bottom-border" src="images/bottom_border.png" alt="Bottom Border" />
+    <img class="layer lvl2 left-garland" src="images/left_top_garland.avif" alt="Left Garland" />
+    <img class="layer lvl2 right-garland" src="images/right_top_garland.avif" alt="Right Garland" />
 
-    <!-- TOP ELEMENTS -->
-    <img class="layer moon" src="images/moon.avif" alt="Moon" />
-    <img class="layer om" src="images/om.avif" alt="Om" />
-    <img class="layer shivji" src="images/top_shivji.avif" alt="Shivji" />
+    <!-- Level 1: Arch (topmost) -->
+    <img class="layer lvl1 arch" src="images/top_arch.avif" alt="Top Arch" />
 
-    <!-- TREES -->
-    <img class="layer left-tree" src="images/left_tree.avif" alt="Left Tree" />
-    <img class="layer right-tree" src="images/right_tree.avif" alt="Right Tree" />
+  </div>
 
-    <!-- GANPATI -->
-    <img class="layer left-ganpati" src="images/left_ganpati.avif" alt="Left Ganpati" />
-    <img class="layer right-ganpati" src="images/right_ganpati.avif" alt="Right Ganpati" />
-
-    <!-- CENTRE PROP -->
-    <img class="layer centre-prop" src="images/centre_prop.avif" alt="Center Decor" />
-
-    <!-- OPTIONAL EXTRAS -->
-    <img class="layer balloon" src="images/balloon.avif" alt="Balloon" />
-    <img class="layer castle" src="images/castle.avif" alt="Castle" />
-
-    <!-- TEXT -->
-    <div class="hero-text">
-      <h1>Hitarth</h1>
-      <p class="wed">WEDS</p>
-      <h1>Chitra</h1>
-
-      <a class="btn" href="#details">View Details</a>
-    </div>
-
-  </header>
-
-  <main id="details" class="container">
-    <section class="card">
-      <h2>Wedding Details</h2>
-      <p><b>Date:</b> Coming Soon</p>
-      <p><b>Venue:</b> Coming Soon</p>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
 </body>
 </html>

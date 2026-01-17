@@ -5,17 +5,26 @@
 }
 
 body{
-  font-family: system-ui, Arial, sans-serif;
-  background: #071321;
-  color: #fff;
+  background: #061423;
 }
 
-/* HERO */
-.hero{
+/* One div only */
+.invite{
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+}
+
+/* Level 4 background (repeat) */
+.bg{
+  position: absolute;
+  inset: 0;
+  background-image: url("images/background.avif");
+  background-repeat: repeat;
+  background-size: 900px auto;  /* adjust if you want bigger/smaller repeat */
+  background-position: center top;
+  z-index: 1;
 }
 
 /* Common layer rules */
@@ -25,227 +34,107 @@ body{
   user-select: none;
 }
 
-/* Background */
-.bg{
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+/* -----------------------------
+   LEVEL 3: Borders
+   Above background, below arch & lvl2
+------------------------------*/
+.border{
+  z-index: 2;
 }
 
-/* Top arch full width */
-.top-arch{
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 3;
-}
-
-/* Side borders */
 .left-border{
   top: 0;
   left: 0;
   height: 100%;
-  z-index: 6;
 }
 
 .right-border{
   top: 0;
   right: 0;
   height: 100%;
-  z-index: 6;
 }
 
-/* Bottom border */
 .bottom-border{
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 6;
 }
 
-/* Top garlands / flowers */
-.left-top-garland{
+/* -----------------------------
+   LEVEL 2: Shivji + Flowers + Garlands
+   Must overlap below arch by ~10%
+------------------------------*/
+.lvl2{
+  z-index: 3;
+}
+
+/* Arch is full width on top */
+.arch{
   top: 0;
   left: 0;
-  width: 45%;
-  z-index: 5;
+  width: 100%;
+  z-index: 4; /* Level 1 highest */
 }
 
-.right-top-garland{
-  top: 0;
-  right: 0;
-  width: 45%;
-  z-index: 5;
-}
-
-.left-top-flower{
-  top: 0;
-  left: 0;
-  width: 25%;
-  z-index: 5;
-}
-
-.right-top-flower{
-  top: 0;
-  right: 0;
-  width: 25%;
-  z-index: 5;
-}
-
-/* Top icons */
-.moon{
-  top: 30px;
-  right: 70px;
-  width: 150px;
-  z-index: 7;
-}
-
-.om{
-  top: 35px;
-  left: 70px;
-  width: 80px;
-  z-index: 7;
-}
-
+/* Shivji centered below arch with overlap */
 .shivji{
-  top: 18px;
+  top: 18%; /* controls overlap with arch */
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
-  z-index: 7;
+  width: 140px;
 }
 
-/* Trees bottom */
-.left-tree{
-  bottom: 0;
+/* Flowers at same level as Shivji */
+.left-flower{
+  top: 18%;
+  left: 18%;
+  width: 220px;
+}
+
+.right-flower{
+  top: 18%;
+  right: 18%;
+  width: 220px;
+}
+
+/* Garlands same level too */
+.left-garland{
+  top: 18%;
   left: 0;
-  width: 260px;
-  z-index: 4;
+  width: 45%;
 }
 
-.right-tree{
-  bottom: 0;
+.right-garland{
+  top: 18%;
   right: 0;
-  width: 260px;
-  z-index: 4;
+  width: 45%;
 }
 
-/* Ganpati */
-.left-ganpati{
-  bottom: 130px;
-  left: 70px;
-  width: 240px;
-  z-index: 8;
-}
-
-.right-ganpati{
-  bottom: 130px;
-  right: 70px;
-  width: 240px;
-  z-index: 8;
-}
-
-/* Centre prop */
-.centre-prop{
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 360px;
-  z-index: 9;
-}
-
-/* Optional: balloon and castle (keep subtle) */
-.balloon{
-  top: 130px;
-  right: 140px;
-  width: 120px;
-  z-index: 4;
-  opacity: 0.9;
-}
-
-.castle{
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 520px;
-  z-index: 2;
-  opacity: 0.8;
-}
-
-/* TEXT */
-.hero-text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  text-align: center;
-  z-index: 20;
-  padding: 22px 18px;
-  width: min(720px, 92%);
-}
-
-.hero-text h1{
-  font-size: clamp(38px, 5vw, 78px);
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-shadow: 0 8px 20px rgba(0,0,0,0.35);
-}
-
-.wed{
-  margin: 10px 0;
-  letter-spacing: 6px;
-  font-weight: 600;
-  opacity: 0.95;
-}
-
-.btn{
-  display: inline-block;
-  margin-top: 18px;
-  padding: 12px 18px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.95);
-  color: #000;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-/* DETAILS */
-.container{
-  width: min(1000px, 92%);
-  margin: 30px auto;
-}
-
-.card{
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  padding: 22px;
-  border-radius: 18px;
-  backdrop-filter: blur(10px);
-}
-
-/* MOBILE FIXES */
+/* -----------------------------
+   Mobile adjustments
+------------------------------*/
 @media (max-width: 768px){
-  .moon{ width: 110px; right: 20px; top: 20px; }
-  .om{ width: 60px; left: 20px; top: 22px; }
-  .shivji{ width: 90px; }
+  .bg{
+    background-size: 650px auto;
+  }
 
-  .left-ganpati, .right-ganpati{
+  .shivji{
+    width: 110px;
+    top: 16%;
+  }
+
+  .left-flower,
+  .right-flower{
     width: 160px;
-    bottom: 120px;
-    left: 15px;
-    right: 15px;
+    top: 16%;
   }
 
-  .left-tree, .right-tree{
-    width: 170px;
-  }
+  .left-flower{ left: 10%; }
+  .right-flower{ right: 10%; }
 
-  .centre-prop{
-    width: 240px;
+  .left-garland,
+  .right-garland{
+    top: 16%;
+    width: 55%;
   }
-
-  .balloon{ display: none; }
-  .castle{ width: 360px; }
 }

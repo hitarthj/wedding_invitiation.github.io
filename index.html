@@ -1,60 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invite — Abhishek & Kanika</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hitarth & Chitra | Wedding Invite</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header class="hero">
-    <div class="hero-content">
-        <h1>Abhishek <span>&</span> Kanika</h1>
-        <p>We joyfully invite you to our wedding celebrations</p>
+  <!-- HERO SECTION -->
+  <header class="hero">
+
+    <!-- Background -->
+    <img class="layer bg" src="images/background.png" alt="Background" />
+
+    <!-- Decorative layers -->
+    <img class="layer top-arch" src="images/top_arch.png" alt="Top Arch" />
+
+    <img class="layer left-border" src="images/left_border.png" alt="Left Border" />
+    <img class="layer right-border" src="images/right_border.png" alt="Right Border" />
+    <img class="layer bottom-border" src="images/bottom_border.png" alt="Bottom Border" />
+
+    <img class="layer moon" src="images/moon.png" alt="Moon" />
+    <img class="layer om" src="images/om.png" alt="Om" />
+
+    <img class="layer left-ganpati" src="images/left_ganpati.png" alt="Left Ganpati" />
+    <img class="layer right-ganpati" src="images/right_ganpati.png" alt="Right Ganpati" />
+
+    <img class="layer left-tree" src="images/left_tree.png" alt="Left Tree" />
+    <img class="layer right-tree" src="images/right_tree.png" alt="Right Tree" />
+
+    <img class="layer centre-prop" src="images/centre_prop.png" alt="Center Decor" />
+
+    <!-- Text -->
+    <div class="hero-text">
+      <h1>Hitarth</h1>
+      <p class="wed-text">WEDS</p>
+      <h1>Chitra</h1>
+
+      <a class="btn" href="#details">View Details</a>
     </div>
-</header>
 
-<section id="events">
-    <h2>Event Schedule</h2>
-    <div class="card-grid">
-        <div class="event-card">
-            <h3>Mehendi</h3>
-            <p>Friday, March 7th, 2026</p>
-            <p>The Savoy, Mussoorie</p>
-            <button onclick="openRoute('https://maps.google.com')">See Route</button>
-        </div>
-        <div class="event-card">
-            <h3>Haldi</h3>
-            <p>Saturday, March 8th, 2026</p>
-            <p>The Savoy, Mussoorie</p>
-            <button onclick="openRoute('https://maps.google.com')">See Route</button>
-        </div>
-        <!-- Add more cards similarly -->
-    </div>
-</section>
+  </header>
 
-<section id="about">
-    <h2>Meet The Couple</h2>
-    <p>We are delighted that you’re part of our journey...</p>
-</section>
+  <!-- DETAILS SECTION -->
+  <main id="details" class="container">
+    <section class="card">
+      <h2>Wedding Details</h2>
+      <p><b>Date:</b> Coming Soon</p>
+      <p><b>Venue:</b> Coming Soon</p>
+    </section>
+  </main>
 
-<section id="details">
-    <h2>Things to Know</h2>
-    <div class="info-block">
-        <h4>Hashtag</h4>
-        <p>#BadriKiDulhania</p>
-    </div>
-    <div class="info-block">
-        <h4>Parking</h4>
-        <p>Valet parking available at venue</p>
-    </div>
-</section>
-
-<footer>
-    <button id="rsvpBtn">RSVP Now</button>
-</footer>
-
-<script src="scripts.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

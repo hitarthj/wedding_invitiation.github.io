@@ -9,30 +9,32 @@
 
 <body>
 
-  <!-- ONE DIV ONLY -->
-  <div class="invite">
+  <div class="invite" id="invite">
 
-    <!-- Background (last layer, repeating full page) -->
+    <!-- Background -->
     <div class="bg"></div>
 
-    <!-- Level 1: Arch + Borders (together from top) -->
-    <img class="layer arch" src="images/top_arch.avif" alt="Top Arch" />
+    <!-- Level 1 -->
+    <img id="arch" class="layer arch" src="images/top_arch.avif" alt="Top Arch" />
     <img class="layer left-border" src="images/left_border.png" alt="Left Border" />
     <img class="layer right-border" src="images/right_border.png" alt="Right Border" />
 
-    <!-- Level 2: Shivji + flowers + garlands (below arch, overlap) -->
-    <img class="layer shivji" src="images/top_shivji.avif" alt="Shivji" />
+    <!-- Level 2 (auto positioned by JS) -->
+    <div id="level2" class="level2">
+      <img class="layer2 shivji" src="images/top_shivji.avif" alt="Shivji" />
 
-    <img class="layer left-garland" src="images/left_top_garland.avif" alt="Left Garland" />
-    <img class="layer right-garland" src="images/right_top_garland.avif" alt="Right Garland" />
+      <img class="layer2 left-garland" src="images/left_top_garland.avif" alt="Left Garland" />
+      <img class="layer2 right-garland" src="images/right_top_garland.avif" alt="Right Garland" />
 
-    <img class="layer left-flower" src="images/left_top_flower.avif" alt="Left Flower" />
-    <img class="layer right-flower" src="images/right_top_flower.avif" alt="Right Flower" />
+      <img class="layer2 left-flower" src="images/left_top_flower.avif" alt="Left Flower" />
+      <img class="layer2 right-flower" src="images/right_top_flower.avif" alt="Right Flower" />
+    </div>
 
-    <!-- Level 3: Bottom border -->
+    <!-- Level 3 -->
     <img class="layer bottom-border" src="images/bottom_border.png" alt="Bottom Border" />
 
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>

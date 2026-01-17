@@ -1,130 +1,142 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   background: #061423;
 }
 
-/* One div */
-.invite{
+/* One div only */
+.invite {
   position: relative;
-  width: 100%;
+  width: 100vw;     /* FULL browser width */
   height: 100vh;
   overflow: hidden;
 }
 
-/* Background repeating full page (no scaling) */
-.bg{
+/* Background repeating full page */
+.bg {
   position: absolute;
   inset: 0;
   background-image: url("images/background.avif");
   background-repeat: repeat;
-  background-size: auto;     /* IMPORTANT: do not scale */
+  background-size: auto;
   background-position: top left;
   z-index: 1;
 }
 
 /* Common layer */
-.layer{
+.layer {
   position: absolute;
   pointer-events: none;
   user-select: none;
-  z-index: 5; /* everything above background */
 }
 
-/* ARCH + BORDERS should start from TOP together */
-.arch{
+/* ---------- Level 1: ARCH ---------- */
+.arch {
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;     /* FULL width */
+  height: auto;
   z-index: 10;
 }
 
-.left-border{
+/* ---------- Borders should stick to browser edges ---------- */
+.left-border {
   top: 0;
   left: 0;
-  height: 100%;
+  height: 100vh;   /* FULL height */
+  width: auto;
   z-index: 9;
 }
 
-.right-border{
+.right-border {
   top: 0;
   right: 0;
-  height: 100%;
+  height: 100vh;   /* FULL height */
+  width: auto;
   z-index: 9;
 }
 
-/* Bottom border above background */
-.bottom-border{
+/* Bottom border full width */
+.bottom-border {
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
+  height: auto;
   z-index: 8;
 }
 
-/* Second level (below arch with overlap)
-   Adjust this top value to control overlap.
+/* ---------- Level 2: BELOW the arch semicircle end ---------- */
+/*
+  This value controls where the semicircle ends.
+  Adjust this ONE number to align perfectly.
 */
-.shivji{
-  top: 18%;
+:root {
+  --arch-end: 280px; /* try 260px-340px depending on your screen */
+}
+
+/* Shivji centered just below arch end */
+.shivji {
+  top: calc(var(--arch-end) - 20px);  /* small overlap */
   left: 50%;
   transform: translateX(-50%);
   width: 140px;
   z-index: 7;
 }
 
-/* Garlands same level */
-.left-garland{
-  top: 18%;
+/* Garlands same level as Shivji */
+.left-garland {
+  top: calc(var(--arch-end) - 20px);
   left: 0;
   width: 45%;
   z-index: 7;
 }
 
-.right-garland{
-  top: 18%;
+.right-garland {
+  top: calc(var(--arch-end) - 20px);
   right: 0;
   width: 45%;
   z-index: 7;
 }
 
 /* Flowers same level */
-.left-flower{
-  top: 18%;
+.left-flower {
+  top: calc(var(--arch-end) - 20px);
   left: 18%;
   width: 220px;
   z-index: 7;
 }
 
-.right-flower{
-  top: 18%;
+.right-flower {
+  top: calc(var(--arch-end) - 20px);
   right: 18%;
   width: 220px;
   z-index: 7;
 }
 
 /* Mobile tuning */
-@media (max-width: 768px){
-  .shivji{
-    top: 16%;
+@media (max-width: 768px) {
+  :root {
+    --arch-end: 220px;
+  }
+
+  .shivji {
     width: 110px;
   }
 
   .left-garland,
-  .right-garland{
-    top: 16%;
+  .right-garland {
     width: 55%;
   }
 
   .left-flower,
-  .right-flower{
-    top: 16%;
+  .right-flower {
     width: 160px;
   }
 
-  .left-flower{ left: 10%; }
-  .right-flower{ right: 10%; }
+  .left-flower { left: 10%; }
+  .right-flower { right: 10%; }
 }

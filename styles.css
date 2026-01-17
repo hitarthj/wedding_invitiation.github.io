@@ -1,12 +1,12 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body{
-  font-family: Arial, sans-serif;
-  background: #0b1b2b;
+  font-family: system-ui, Arial, sans-serif;
+  background: #071321;
   color: #fff;
 }
 
@@ -18,7 +18,7 @@ body{
   overflow: hidden;
 }
 
-/* Every image layer */
+/* Common layer rules */
 .layer{
   position: absolute;
   pointer-events: none;
@@ -27,160 +27,225 @@ body{
 
 /* Background */
 .bg{
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  left: 0;
-  top: 0;
   z-index: 1;
 }
 
-/* Top arch */
+/* Top arch full width */
 .top-arch{
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 3;
 }
 
-/* Borders */
+/* Side borders */
 .left-border{
-  height: 100%;
-  left: 0;
   top: 0;
-  z-index: 4;
-}
-
-.right-border{
+  left: 0;
   height: 100%;
-  right: 0;
-  top: 0;
-  z-index: 4;
-}
-
-.bottom-border{
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 4;
-}
-
-/* Extra elements */
-.moon{
-  width: 160px;
-  top: 40px;
-  right: 80px;
-  z-index: 5;
-}
-
-.om{
-  width: 90px;
-  top: 40px;
-  left: 80px;
-  z-index: 5;
-}
-
-.left-ganpati{
-  width: 220px;
-  bottom: 140px;
-  left: 60px;
-  z-index: 5;
-}
-
-.right-ganpati{
-  width: 220px;
-  bottom: 140px;
-  right: 60px;
-  z-index: 5;
-}
-
-.left-tree{
-  width: 220px;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
-}
-
-.right-tree{
-  width: 220px;
-  bottom: 0;
-  right: 0;
-  z-index: 3;
-}
-
-.centre-prop{
-  width: 320px;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 6;
 }
 
-/* Text in center */
+.right-border{
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 6;
+}
+
+/* Bottom border */
+.bottom-border{
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 6;
+}
+
+/* Top garlands / flowers */
+.left-top-garland{
+  top: 0;
+  left: 0;
+  width: 45%;
+  z-index: 5;
+}
+
+.right-top-garland{
+  top: 0;
+  right: 0;
+  width: 45%;
+  z-index: 5;
+}
+
+.left-top-flower{
+  top: 0;
+  left: 0;
+  width: 25%;
+  z-index: 5;
+}
+
+.right-top-flower{
+  top: 0;
+  right: 0;
+  width: 25%;
+  z-index: 5;
+}
+
+/* Top icons */
+.moon{
+  top: 30px;
+  right: 70px;
+  width: 150px;
+  z-index: 7;
+}
+
+.om{
+  top: 35px;
+  left: 70px;
+  width: 80px;
+  z-index: 7;
+}
+
+.shivji{
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  z-index: 7;
+}
+
+/* Trees bottom */
+.left-tree{
+  bottom: 0;
+  left: 0;
+  width: 260px;
+  z-index: 4;
+}
+
+.right-tree{
+  bottom: 0;
+  right: 0;
+  width: 260px;
+  z-index: 4;
+}
+
+/* Ganpati */
+.left-ganpati{
+  bottom: 130px;
+  left: 70px;
+  width: 240px;
+  z-index: 8;
+}
+
+.right-ganpati{
+  bottom: 130px;
+  right: 70px;
+  width: 240px;
+  z-index: 8;
+}
+
+/* Centre prop */
+.centre-prop{
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  z-index: 9;
+}
+
+/* Optional: balloon and castle (keep subtle) */
+.balloon{
+  top: 130px;
+  right: 140px;
+  width: 120px;
+  z-index: 4;
+  opacity: 0.9;
+}
+
+.castle{
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 520px;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+/* TEXT */
 .hero-text{
   position: absolute;
-  z-index: 10;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -55%);
   text-align: center;
-  padding: 20px;
+  z-index: 20;
+  padding: 22px 18px;
+  width: min(720px, 92%);
 }
 
 .hero-text h1{
-  font-size: clamp(36px, 5vw, 72px);
+  font-size: clamp(38px, 5vw, 78px);
   font-weight: 700;
   letter-spacing: 1px;
+  text-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
 
-.wed-text{
+.wed{
   margin: 10px 0;
-  font-size: 18px;
-  letter-spacing: 4px;
-  opacity: 0.9;
+  letter-spacing: 6px;
+  font-weight: 600;
+  opacity: 0.95;
 }
 
-/* Button */
 .btn{
   display: inline-block;
   margin-top: 18px;
   padding: 12px 18px;
-  background: #ffffff;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.95);
   color: #000;
-  border-radius: 12px;
   text-decoration: none;
   font-weight: 700;
 }
 
-/* CONTENT */
+/* DETAILS */
 .container{
   width: min(1000px, 92%);
   margin: 30px auto;
 }
 
 .card{
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
   padding: 22px;
   border-radius: 18px;
   backdrop-filter: blur(10px);
 }
 
-/* Mobile fixes */
+/* MOBILE FIXES */
 @media (max-width: 768px){
   .moon{ width: 110px; right: 20px; top: 20px; }
-  .om{ width: 65px; left: 20px; top: 20px; }
+  .om{ width: 60px; left: 20px; top: 22px; }
+  .shivji{ width: 90px; }
 
   .left-ganpati, .right-ganpati{
-    width: 150px;
+    width: 160px;
     bottom: 120px;
-  }
-
-  .centre-prop{
-    width: 220px;
+    left: 15px;
+    right: 15px;
   }
 
   .left-tree, .right-tree{
-    width: 160px;
+    width: 170px;
   }
+
+  .centre-prop{
+    width: 240px;
+  }
+
+  .balloon{ display: none; }
+  .castle{ width: 360px; }
 }

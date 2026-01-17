@@ -8,7 +8,7 @@ body{
   background: #061423;
 }
 
-/* One div only */
+/* One div */
 .invite{
   position: relative;
   width: 100%;
@@ -16,125 +16,115 @@ body{
   overflow: hidden;
 }
 
-/* Level 4 background (repeat) */
+/* Background repeating full page (no scaling) */
 .bg{
   position: absolute;
   inset: 0;
   background-image: url("images/background.avif");
   background-repeat: repeat;
-  background-size: 900px auto;  /* adjust if you want bigger/smaller repeat */
-  background-position: center top;
+  background-size: auto;     /* IMPORTANT: do not scale */
+  background-position: top left;
   z-index: 1;
 }
 
-/* Common layer rules */
+/* Common layer */
 .layer{
   position: absolute;
   pointer-events: none;
   user-select: none;
+  z-index: 5; /* everything above background */
 }
 
-/* -----------------------------
-   LEVEL 3: Borders
-   Above background, below arch & lvl2
-------------------------------*/
-.border{
-  z-index: 2;
+/* ARCH + BORDERS should start from TOP together */
+.arch{
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .left-border{
   top: 0;
   left: 0;
   height: 100%;
+  z-index: 9;
 }
 
 .right-border{
   top: 0;
   right: 0;
   height: 100%;
+  z-index: 9;
 }
 
+/* Bottom border above background */
 .bottom-border{
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 8;
 }
 
-/* -----------------------------
-   LEVEL 2: Shivji + Flowers + Garlands
-   Must overlap below arch by ~10%
-------------------------------*/
-.lvl2{
-  z-index: 3;
-}
-
-/* Arch is full width on top */
-.arch{
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 4; /* Level 1 highest */
-}
-
-/* Shivji centered below arch with overlap */
+/* Second level (below arch with overlap)
+   Adjust this top value to control overlap.
+*/
 .shivji{
-  top: 18%; /* controls overlap with arch */
+  top: 18%;
   left: 50%;
   transform: translateX(-50%);
   width: 140px;
+  z-index: 7;
 }
 
-/* Flowers at same level as Shivji */
-.left-flower{
-  top: 18%;
-  left: 18%;
-  width: 220px;
-}
-
-.right-flower{
-  top: 18%;
-  right: 18%;
-  width: 220px;
-}
-
-/* Garlands same level too */
+/* Garlands same level */
 .left-garland{
   top: 18%;
   left: 0;
   width: 45%;
+  z-index: 7;
 }
 
 .right-garland{
   top: 18%;
   right: 0;
   width: 45%;
+  z-index: 7;
 }
 
-/* -----------------------------
-   Mobile adjustments
-------------------------------*/
+/* Flowers same level */
+.left-flower{
+  top: 18%;
+  left: 18%;
+  width: 220px;
+  z-index: 7;
+}
+
+.right-flower{
+  top: 18%;
+  right: 18%;
+  width: 220px;
+  z-index: 7;
+}
+
+/* Mobile tuning */
 @media (max-width: 768px){
-  .bg{
-    background-size: 650px auto;
-  }
-
   .shivji{
+    top: 16%;
     width: 110px;
-    top: 16%;
   }
-
-  .left-flower,
-  .right-flower{
-    width: 160px;
-    top: 16%;
-  }
-
-  .left-flower{ left: 10%; }
-  .right-flower{ right: 10%; }
 
   .left-garland,
   .right-garland{
     top: 16%;
     width: 55%;
   }
+
+  .left-flower,
+  .right-flower{
+    top: 16%;
+    width: 160px;
+  }
+
+  .left-flower{ left: 10%; }
+  .right-flower{ right: 10%; }
 }

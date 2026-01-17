@@ -1,13 +1,41 @@
+/* -----------------------------
+   Base / Template-like CSS
+------------------------------*/
+:root{
+  --bg-dark: #061423;
+
+  --font-title: "Cormorant", serif;
+  --font-body: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-indic: "Gotu", serif;
+
+  /* responsive scale */
+  --shivji-size: clamp(80px, 10vw, 140px);
+  --flower-size: clamp(120px, 16vw, 240px);
+  --garland-width: min(45vw, 620px);
+
+  /* how much below arch curve the level2 should sit */
+  --level2-overlap: 0.72;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  background: #061423;
+html{
+  height: 100%;
 }
 
+body{
+  min-height: 100%;
+  background: var(--bg-dark);
+  font-family: var(--font-body);
+}
+
+/* -----------------------------
+   ONE DIV container
+------------------------------*/
 .invite{
   position: relative;
   width: 100vw;
@@ -15,25 +43,27 @@ body{
   overflow: hidden;
 }
 
-/* Background repeats, no scaling */
+/* Background repeating full page */
 .bg{
   position: absolute;
   inset: 0;
   background-image: url("images/background.avif");
   background-repeat: repeat;
-  background-size: auto;
+  background-size: auto; /* do NOT scale */
   background-position: top left;
   z-index: 1;
 }
 
-/* Main layers */
+/* Common layer rules */
 .layer{
   position: absolute;
   pointer-events: none;
   user-select: none;
 }
 
-/* Arch responsive */
+/* -----------------------------
+   LEVEL 1: Arch + Borders
+------------------------------*/
 .arch{
   top: 0;
   left: 0;
@@ -42,7 +72,6 @@ body{
   z-index: 10;
 }
 
-/* Borders always at edges */
 .left-border{
   top: 0;
   left: 0;
@@ -59,7 +88,6 @@ body{
   z-index: 9;
 }
 
-/* Bottom border */
 .bottom-border{
   bottom: 0;
   left: 0;
@@ -68,54 +96,70 @@ body{
   z-index: 8;
 }
 
-/* Level 2 container: positioned by JS */
+/* -----------------------------
+   LEVEL 2: Shivji + garlands + flowers
+   (positioned by JS)
+------------------------------*/
 .level2{
   position: absolute;
   left: 0;
   width: 100vw;
-  height: 240px; /* enough space for elements */
+  height: 260px;
   z-index: 7;
 }
 
-/* Level2 items */
 .layer2{
   position: absolute;
   pointer-events: none;
   user-select: none;
 }
 
-/* Shivji center */
+/* Shivji */
 .shivji{
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(80px, 10vw, 140px);
-  top: 0;
+  width: var(--shivji-size);
 }
 
 /* Garlands */
 .left-garland{
-  left: 0;
-  width: 45vw;
-  max-width: 600px;
   top: 0;
+  left: 0;
+  width: var(--garland-width);
 }
 
 .right-garland{
-  right: 0;
-  width: 45vw;
-  max-width: 600px;
   top: 0;
+  right: 0;
+  width: var(--garland-width);
 }
 
 /* Flowers */
 .left-flower{
-  left: 14vw;
-  width: clamp(120px, 16vw, 240px);
   top: 0;
+  left: 14vw;
+  width: var(--flower-size);
 }
 
 .right-flower{
-  right: 14vw;
-  width: clamp(120px, 16vw, 240px);
   top: 0;
+  right: 14vw;
+  width: var(--flower-size);
+}
+
+/* -----------------------------
+   Mobile tuning
+------------------------------*/
+@media (max-width: 768px){
+  :root{
+    --garland-width: min(55vw, 520px);
+  }
+
+  .left-flower{ left: 10vw; }
+  .right-flower{ right: 10vw; }
+
+  .level2{
+    height: 220px;
+  }
 }

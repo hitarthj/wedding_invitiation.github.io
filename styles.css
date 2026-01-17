@@ -1,81 +1,186 @@
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hero {
-    background: url('hero-mountain.jpg') center/cover no-repeat;
-    height: 65vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 2rem;
+body{
+  font-family: Arial, sans-serif;
+  background: #0b1b2b;
+  color: #fff;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin: 0;
+/* HERO */
+.hero{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.hero span {
-    font-size: 2rem;
-    display: block;
+/* Every image layer */
+.layer{
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
 }
 
-#events {
-    padding: 2rem;
-    background: #fafafa;
+/* Background */
+.bg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 
-.card-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+/* Top arch */
+.top-arch{
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
 }
 
-.event-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Borders */
+.left-border{
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 4;
 }
 
-.event-card h3 {
-    margin-top: 0;
+.right-border{
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 4;
 }
 
-.event-card button {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 0.8rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
+.bottom-border{
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
 }
 
-#about, #details {
-    padding: 2rem;
+/* Extra elements */
+.moon{
+  width: 160px;
+  top: 40px;
+  right: 80px;
+  z-index: 5;
 }
 
-.info-block {
-    margin-bottom: 1rem;
+.om{
+  width: 90px;
+  top: 40px;
+  left: 80px;
+  z-index: 5;
 }
 
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: #222;
+.left-ganpati{
+  width: 220px;
+  bottom: 140px;
+  left: 60px;
+  z-index: 5;
 }
 
-footer button {
-    background: #fff;
-    color: #222;
-    padding: 1rem 2rem;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
+.right-ganpati{
+  width: 220px;
+  bottom: 140px;
+  right: 60px;
+  z-index: 5;
+}
+
+.left-tree{
+  width: 220px;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.right-tree{
+  width: 220px;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.centre-prop{
+  width: 320px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+
+/* Text in center */
+.hero-text{
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-text h1{
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.wed-text{
+  margin: 10px 0;
+  font-size: 18px;
+  letter-spacing: 4px;
+  opacity: 0.9;
+}
+
+/* Button */
+.btn{
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 18px;
+  background: #ffffff;
+  color: #000;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* CONTENT */
+.container{
+  width: min(1000px, 92%);
+  margin: 30px auto;
+}
+
+.card{
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 22px;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+}
+
+/* Mobile fixes */
+@media (max-width: 768px){
+  .moon{ width: 110px; right: 20px; top: 20px; }
+  .om{ width: 65px; left: 20px; top: 20px; }
+
+  .left-ganpati, .right-ganpati{
+    width: 150px;
+    bottom: 120px;
+  }
+
+  .centre-prop{
+    width: 220px;
+  }
+
+  .left-tree, .right-tree{
+    width: 160px;
+  }
 }

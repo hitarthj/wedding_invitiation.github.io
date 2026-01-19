@@ -1,45 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hitarth & Chitra</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,700;1,400;1,700&family=Gotu&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Wedding Invitation Demo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .hero {
+            background-image: url('mountain-bg.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Overlay for text readability */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .invite-details {
+            padding: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .rsvp-button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .rsvp-form {
+            display: none;
+            margin-top: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
-
-  <div class="invite" id="invite">
-
-    <!-- Background -->
-    <div class="bg"></div>
-
-    <!-- Level 1 -->
-    <img id="arch" class="layer arch" src="images/top_arch.avif" alt="Top Arch" />
-    <img class="layer left-border" src="images/left_border.png" alt="Left Border" />
-    <img class="layer right-border" src="images/right_border.png" alt="Right Border" />
-
-    <!-- Level 2 (auto positioned by JS) -->
-    <div id="level2" class="level2">
-      <img class="layer2 shivji" src="images/top_shivji.avif" alt="Shivji" />
-
-      <img class="layer2 left-garland" src="images/left_top_garland.avif" alt="Left Garland" />
-      <img class="layer2 right-garland" src="images/right_top_garland.avif" alt="Right Garland" />
-
-      <img class="layer2 left-flower" src="images/left_top_flower.avif" alt="Left Flower" />
-      <img class="layer2 right-flower" src="images/right_top_flower.avif" alt="Right Flower" />
+    <div class="hero">
+        <div class="hero-content">
+            <h1>You're Invited!</h1>
+            <p>Join us for a mountain adventure as we say "I Do"</p>
+            <p>Date: June 15, 2024 | Location: Rocky Mountain Lodge</p>
+        </div>
+    </div>
+    
+    <div class="invite-details">
+        <h2>Wedding Details</h2>
+        <p>Dear Friends and Family,</p>
+        <p>We are thrilled to invite you to celebrate our special day amidst the breathtaking beauty of the mountains. Join us for an unforgettable ceremony and reception.</p>
+        <p><strong>Ceremony:</strong> 4:00 PM at the Summit Chapel</p>
+        <p><strong>Reception:</strong> 6:00 PM at the Lodge Ballroom</p>
+        <p>Dress Code: Mountain Chic</p>
+        
+        <button class="rsvp-button" onclick="toggleRSVP()">RSVP Here</button>
+        <div class="rsvp-form" id="rsvpForm">
+            <form onsubmit="alert('Thank you for RSVPing!'); return false;">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Message or Dietary Notes"></textarea>
+                <button type="submit">Submit RSVP</button>
+            </form>
+        </div>
     </div>
 
-    <!-- Level 3 -->
-    <img class="layer bottom-border" src="images/bottom_border.png" alt="Bottom Border" />
-
-  </div>
-
-  <script src="script.js"></script>
+    <script>
+        function toggleRSVP() {
+            const form = document.getElementById('rsvpForm');
+            form.style.display = form.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
